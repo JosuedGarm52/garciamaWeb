@@ -9,3 +9,13 @@ Repositorio para la clase de programacion web.
 
 ## Numero de control:
 ### 19100182
+
+
+# Imagen
+<img src="IMG/Carpeta.png"
+    title="La carpeta donde se puso el repositorio
+    en la carpeta xampp."
+    alt="La carpeta donde se puso el repositorio
+    en la carpeta xampp.">
+
+### La carpeta donde se puso el repositorio en la carpeta xampp.
