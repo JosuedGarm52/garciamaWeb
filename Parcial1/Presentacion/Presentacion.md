@@ -4,21 +4,21 @@
 
 ## Historial Academico.
 
-|Escuelas|
-|---|
-**Escuela Primaria**  
-Escuela Prof. Luis Castillo Ledon.  
-**Escuela Secundaria**  
-Escuela No. 10° Prof. Antonio Angel Carmona Anzaldua.  
-**Escuela Preparatoria**  
-Colegio de Bachilleres del Estado de Tamaulipas Plantel 01  
-**Universidad**  
-Instituto Tecnologico de Nuevo Laredo.  
-**Carrera**
-Ingenieria en Sistemas Computacionales.
+|Escuelas|Años|
+|---|---|
+**Escuela Primaria**  |
+Escuela Prof. Luis Castillo Ledon. | 2007-2013 
+**Escuela Secundaria**  |
+Escuela No. 10° Prof. Antonio Angel Carmona Anzaldua.| 2013 - 2016
+**Escuela Preparatoria**  |
+Colegio de Bachilleres del Estado de Tamaulipas Plantel 01  |2016-2019 
+**Universidad**  |
+Instituto Tecnologico de Nuevo Laredo.  | 2019-Actualidad
+**Carrera**|
+Ingenieria en Sistemas Computacionales.|
 
 ## Experiencia Laboral.
-- Trabaje por un año como cajero en un oxxo durante un año.
+- Trabaje como cajero en un oxxo durante un año.
 - Trabaje por un semestre en una farmacia.
 ## Lenguajes de programacion que domino.
 **Programacion**
