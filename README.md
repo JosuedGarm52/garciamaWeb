@@ -12,7 +12,7 @@ Repositorio para la clase de programacion web.
 
 
 # Imagen
-<img src="IMG/Carpeta.png"
+<img src="Extra/IMG/Carpeta.png"
     title="La carpeta donde se puso el repositorio
     en la carpeta xampp."
     alt="La carpeta donde se puso el repositorio

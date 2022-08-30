@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #Box{
+            position: relative;
+            width: 200px;
+            height: 160px;
+            border: 3px solid black;
+            margin: 0;
+        }
+        #Box .Cuadro1, 
+        #Box .Cuadro2,
+        #Box .Cuadro3{
+            position: absolute;
+            
+        }
+        #Box .Cuadro1{
+            float: right;
+            width: 80px;
+            height: 40px;
+            border: 3px solid red;
+            margin: 0;
+        }
+        #Box .Cuadro2{
+            left: 30px;
+            width: 30px;
+            height: 30px;
+            border: 3px solid blue;
+            margin: 0;
+            top: 30%;
+        }
+        #Box .Cuadro3{
+            width: 20px;
+            height: 30px;
+            border: 3px solid orange;
+            margin: 0;
+            top: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div id="Box" >
+        <div class="Cuadro1"></div>
+        <div class="Cuadro2"></div>
+        <div class="Cuadro3"></div>
+    </div>
+</body>
+</html>
