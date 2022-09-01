@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .Tabla {
+            border-collapse: collapse;
+            margin: 25px 0; font-size: 1em;
+            font-family: sans-serif; 
+            min-width: 450px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+        }
+        .Tabla thead tr 
+        { 
+            background-color: #980081; 
+            color: #c6e02f; 
+            text-align: middle; 
+        }
+        .Tabla th, .Tabla td { 
+            padding: 12px 15px; 
+        }
+        .Tabla tbody tr { 
+            border-bottom: 1px solid #d62424;
+        } 
+        .TNone
+        {
+            background-color: #009879;
+        }
+
+        .TNone:active{
+            background-color: #62d85e; 
+        }
+        .TNone:hover{
+            background-color: #7a284a;
+        }
+        .Tabla tbody tr:last-of-type { 
+            border-bottom: 2px solid #009879;
+        }
+        button{
+            height: 50px;
+            width: 200px;
+            color: rgb(0, 17, 255)(255, 136, 0)(255, 0, 179);
+            padding: 7px;
+            border-radius: 4px;
+            cursor: pointer;
+            vertical-align: middle;
+            border-bottom: 1px solid black;
+        }
+        
+        .caja{
+            float: right;
+        }
+        #btnColor:active{
+            background-color: #62d85e;
+        }
+    </style>
+    <script type="text/javascript">
+        const nombre = document.querySelector('.TNone');
+        function cambiarColor(){
+            nombre.style.backgroundColor = 'yellow';
+            document.getElementsByClassName('TNone').style.backgroundColor = 'yellow';
+            const name = document.querySelector('.TNone');
+            name.style.backgroundColor = 'yellow';
+            document.body.style.background = "#ccc"
+        }
+        function ChangeColor()
+        {
+            TNone.style.backgroundColor = 'green';
+            box.style.background = 'green';
+            box.style.backgroundColor = 'green';
+            td.style.color = 'green';
+            const neme = document.querySelectorAll('th');
+            neme.style.color = 'Green';
+            document.body.style.background = "#ccc";
+        }
+
+    </script>
+</head>
+<body>
+    <table class="Tabla">
+        <caption>Horario</caption>
+        <tbody>
+            <tr class="box">
+                <td>Materia</td>
+                <th>Hora</th>
+                <th>Semestre</th>
+            </tr>
+            <tr class="TNone">
+                <td>Interface</td>
+                <td>7-8</td>
+                <td class="Sem">6°</td>
+            </tr>
+            <tr>
+                <td>LYA</td>
+                <td>8-9</td>
+                <td>6°</td>
+            </tr>
+            <tr class="TNone">
+                <td>Red</td>
+                <td>12-1</td>
+                <td>6°</td>
+            </tr>
+            <tr>
+                <td>Web</td>
+                <td>2-3</td>
+                <td>6°</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="caja">
+        <button onclick="CambiarColor()">Cambiar el color</button>
+        <input type="button" id="btnColor" onclick="ChangeColor()" value="Cambiar color new">
+    </div>
+</body>
+</html>
