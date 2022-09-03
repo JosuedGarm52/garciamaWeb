@@ -100,18 +100,22 @@
         </tbody>
     </table>
     <div class="caja">
-        <button class="buten">Cambiar el color</button>
-        
+        <button class="buten" onclick="pulsar()">Imprimir el mensaje</button>
     </div>
     <div class="butx">
+
         <p>Boton</p>
         <input type="button"  name="red" id="btnColor" onclick="cambia(this)" value="Cambiar color boton">
+        <p>^^^^^^^^^^^^^^</p>
     </div>
 
     <script>
         function cambia(name){
             var color=boton.name;
             document.getElementById("TNonex").style.background=color;
+        }
+        function pulsar() {
+            alert("Hola!! Pulsaste el boton");
         }
     </script>
 </body>
