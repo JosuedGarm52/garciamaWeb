@@ -47,18 +47,19 @@
             }
             /*Bloque para el título*/
             .accordion-header{
-            background-color: #ffffff;
-            color: #7f8787;
+            background-color: #5d34cf;
+            color: #000000;
             position: relative;
             margin-top: -3em;
-            padding-left: 10px
+            padding-left: 10px;
+            text-align: center;
             }
 
             /*Bloque replegable con el contenido */
             .accordion-content {
             box-sizing: border-box;
-            background-color: #f7f7f7;
-            color: #7f8787;
+            background-color: #31aed4;
+            color: #000000;
             overflow: auto;
             position: relative;
             width: 100%;
@@ -141,7 +142,12 @@
             background-color: rgb(58, 71, 58);
             height: auto;
             width: auto;
-            
+            position: relative;
+            z-index: 1;
+        }
+        .contenedor{
+            background-color: red;
+            z-index: 2;
         }
     </style>
 </head>
