@@ -68,6 +68,7 @@
             padding: 20px;
             transition: margin 0.3s ease 0.1s;
             }
+
             .accordion-toggle:checked + .accordion-header + .accordion-content {
             margin-bottom: 0;
             margin-right: 0;
@@ -83,13 +84,13 @@
             .accordion-toggle:checked + .accordion-header::before {
             content:'-';
             }
-
             .accordion-toggle:hover + .accordion-header{
             background-color: #f7f1f1;
             }
             .accordion-toggle:checked + .accordion-header {
             background-color: #fff;
             }
+
         /*Opciones*/
         .opciones{
             background-color: chartreuse;
@@ -149,6 +150,36 @@
             background-color: red;
             z-index: 2;
         }
+        /*Nueva Lista*/
+        .Des {
+            list-style-type: circle;
+        }
+        .nuevo li,ol{
+            list-style: none;
+            padding: 3px 10px;
+            border: rgb(1, 6, 7) 5px solid;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        ul{
+            padding: 1em 0;
+            position: relative;
+        }
+        li>ul{
+            display: none;
+            position: absolute;
+        }
+        li:hover{
+            background-color: rgb(15, 66, 107);
+            color: white;
+        }
+        .segundo{
+            visibility: hidden;
+        }
+        .nuevo:hover ol{
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -168,26 +199,40 @@
         <div class="contenedor">
             <a class="Despliegue">Primera Forma</a><br>
             <a href="" class="linkCom">Comienzo</a>
+            
+            <div class="nuevo">
+                <span>Pasatiempos</span>
+                <ul class="Des">
+                    <li id="primer" class="primero">Ejercicios</li>
+                    <ol class="segundo">
+                        <li class="primero">Gimnasio</li>
+                        <li class="primero">Trote</li>
+                        <li class="primero">Basketball</li>
+                    </ol>
+                    <li class="primero">Dibujar</li>
+                    <li class="primero">Programar</li>
+                </ul>
+            </div>
             <div class="accordion">
                 <input type="radio" name="toggle" class="accordion-toggle" checked />
-                <div class="accordion-header">Panel 1</div>
-                <div class="accordion-content">Contenido panel 1</div>
+                <div class="accordion-header">Nivel 1</div>
+                <div class="accordion-content">Dificultad principiante</div>
                 
                 <input type="radio" name="toggle" class="accordion-toggle" />
-                <div class="accordion-header">Panel 2</div>
-                <div class="accordion-content">Contenido panel 2</div>
+                <div class="accordion-header">Nivel 2</div>
+                <div class="accordion-content">Dificultad intermedio, peligros leves</div>
                 
                 <input type="radio" name="toggle" class="accordion-toggle" />
-                <div class="accordion-header">Panel 3</div>
-                <div class="accordion-content">Contenido panel 3</div>
+                <div class="accordion-header">Nivel 3</div>
+                <div class="accordion-content">Dificultad Dificil, peligros graves</div>
 
                 <input type="radio" name="toggle" class="accordion-toggle" />
-                <div class="accordion-header">Panel 4</div>
-                <div class="accordion-content">Contenido panel 4</div>
+                <div class="accordion-header">Nivel 4</div>
+                <div class="accordion-content">Dificultad Inferno, peligros Insufribles</div>
 
                 <input type="radio" name="toggle" class="accordion-toggle" />
-                <div class="accordion-header">Panel 5</div>
-                <div class="accordion-content">Contenido panel 5</div>
+                <div class="accordion-header">PNivel 5</div>
+                <div class="accordion-content">Derrota instantanea</div>
                 </div>
         </div>
         
