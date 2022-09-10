@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            color: white;
+            font-size: 25px;
+        }
+        
+        .pagina{
+            overflow: scroll;
+        }
+        /*Listas*/
+        .accordion {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            width: 50%;
+            height: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 1px solid #dedede;
+            border-radius: 8px;
+            margin:0 auto;
+            }
+            /*Contenedor común plegar/desplegar*/
+            .accordion-toggle,
+            .accordion-header{
+            font-size: 15px;
+            width: 100%;
+            height: 3em;
+            margin: 0;
+            line-height: 3em;
+            cursor: pointer;
+            }
+            /*El botón que pliega/despliega*/
+            .accordion-toggle {
+            opacity: 0;
+            background-color: transparent;
+            z-index: 1;
+            margin-bottom: 2px;
+            }
+            /*Bloque para el título*/
+            .accordion-header{
+            background-color: #ffffff;
+            color: #7f8787;
+            position: relative;
+            margin-top: -3em;
+            padding-left: 10px
+            }
+
+            /*Bloque replegable con el contenido */
+            .accordion-content {
+            box-sizing: border-box;
+            background-color: #f7f7f7;
+            color: #7f8787;
+            overflow: auto;
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin-bottom: -250px;
+            padding: 20px;
+            transition: margin 0.3s ease 0.1s;
+            }
+            .accordion-toggle:checked + .accordion-header + .accordion-content {
+            margin-bottom: 0;
+            margin-right: 0;
+            }
+            .accordion-header::before,
+            .accordion-toggle:checked + .accordion-header::before {
+            content: '+';
+            display: inline-block;
+            text-align: center;
+            width: 1em;
+            font-size: 1.em;
+            }
+            .accordion-toggle:checked + .accordion-header::before {
+            content:'-';
+            }
+
+            .accordion-toggle:hover + .accordion-header{
+            background-color: #f7f1f1;
+            }
+            .accordion-toggle:checked + .accordion-header {
+            background-color: #fff;
+            }
+        /*Opciones*/
+        .opciones{
+            background-color: chartreuse;
+        }
+        .opciones summary,p{
+            color: black;
+        }
+        details {
+            list-style: none;
+        }
+        /*Barra*/
+        .boton {
+            background-color: #d0eed1;
+            color: rgb(5, 4, 4);
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .barra {
+            position: relative;
+            display: inline-block;
+        }
+
+        .barraDentro {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        .barraDentro a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .barraDentro a:hover {background-color: #f1f1f1}
+
+        .barra:hover .barraDentro {
+            display: block;
+        }
+        .barra:hover .boton {
+            background-color: #86a787;
+        }
+        .cont{
+            background-color: rgb(58, 71, 58);
+            height: auto;
+            width: auto;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="pagina">
+        <div class="cont">
+            <button class="boton">Boton</button>
+            <button class="boton">Boton</button>
+            <div class="barra">
+                <button class="boton">Despliegue</button>
+                <div class="barraDentro">
+                    <a href="#">Prueba 1</a>
+                    <a href="#">Prueba 2</a>
+                    <a href="#">Prueba 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor">
+            <a class="Despliegue">Primera Forma</a><br>
+            <a href="" class="linkCom">Comienzo</a>
+            <div class="accordion">
+                <input type="radio" name="toggle" class="accordion-toggle" checked />
+                <div class="accordion-header">Panel 1</div>
+                <div class="accordion-content">Contenido panel 1</div>
+                
+                <input type="radio" name="toggle" class="accordion-toggle" />
+                <div class="accordion-header">Panel 2</div>
+                <div class="accordion-content">Contenido panel 2</div>
+                
+                <input type="radio" name="toggle" class="accordion-toggle" />
+                <div class="accordion-header">Panel 3</div>
+                <div class="accordion-content">Contenido panel 3</div>
+
+                <input type="radio" name="toggle" class="accordion-toggle" />
+                <div class="accordion-header">Panel 4</div>
+                <div class="accordion-content">Contenido panel 4</div>
+
+                <input type="radio" name="toggle" class="accordion-toggle" />
+                <div class="accordion-header">Panel 5</div>
+                <div class="accordion-content">Contenido panel 5</div>
+                </div>
+        </div>
+        
+        <div class="opciones">
+            <a>Segunda Forma</a>
+            <details open>
+                <summary>Opcion Abierta</summary>
+                <p>El texto aparecera y se cerrara al pulsar el elemento.</p>
+            </details>
+            <details>
+                <summary>Opcion por defecto</summary>
+                <p>La opcion estara oculta y este texto se vera una vez lo abras</p>
+            </details>
+        </div>
+    </div>
+</body>
+</html>

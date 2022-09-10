@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        .contenedor{
+            background-color: aqua;
+            width: 100%;
+            height: 600px;
+        }
+        .caja{
+            border: 2px solid blue;
+            height: 100px;
+            margin: 2px;
+            /*width: 100px;*/
+            width: calc((100% / 6) - 4px);
+            float: left;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        @media (max-width: 600px){
+            div {
+                
+            }
+        }
+
+        @media screen and (max-width:400px ) and (max-width: 800px){
+            #caja4{
+                clear: left;
+            }
+            .caja{
+                width: calc((100% / 3) - 4px);
+            }
+        }
+
+        @media screen and (max-width: 300px){
+            .caja{
+                width: calc((100% / 3) - 4px);
+            }
+        }
+        span{
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+    <span>Garcia Maldonado</span>
+    <div class="contenedor">
+        
+        <div id= "caja1" class="caja">Caja1</div>
+        <div id= "caja2" class="caja">Caja2</div>
+        <div id= "caja3" class="caja">Caja3</div>
+        <div id= "caja4" class="caja">Caja4</div>
+        <div id= "caja5" class="caja">Caja5</div> 
+    </div>
+    
+</body>
+</html>
