@@ -24,7 +24,7 @@
                 display: none;
             }
             .modal{
-                background: linear-gradient(0deg,white 70%, crimson 30%);
+                background: linear-gradient(0deg,white 70%, rgb(73, 20, 220) 30%);
                 width: 600px;
                 height: 300px;
                 top: 50%;
@@ -42,7 +42,7 @@
                 background: white;
                 position: absolute;
                 right: -20px;
-                color: crimson;
+                color: rgb(50, 20, 220);
                 top: -20px;
                 width: 40px;
                 height: 40px;
@@ -53,13 +53,17 @@
                 cursor: pointer;
             }
             .modal_titulo{
-                color: white;
+                color: rgb(0, 0, 0);
                 font-size: 40px;
+                top: 40px;
+                position: inherit;
             }
-            .modal_mensaje{            
+            .modal_mensaje{         
+            height: 50%;   
             padding: 10px 30px;
             position: absolute;
                 overflow: scroll;
+                bottom: 30px;
             }
             .modal_botones{      
                 width: 100%;    
@@ -73,13 +77,13 @@
             .boton{
                 background: white;
                 padding: 8px 30px;
-                color: crimson;
+                color: blue;
                 text-decoration: none;
                 border-radius: 25px;
-                border:1px solid crimson
+                border:1px solid blue
             }
             .boton:hover{
-                background: crimson;
+                background: blue;
                 color: white;
             }
             /*Listas*/
@@ -202,7 +206,7 @@
                     </div>
                 </div>
                 <div class="modal_botones">
-                    <a href="" class="boton">COMPARTIR</a>
+                    <a href="" class="boton">CERRAR</a>
                     <a href="" class="boton">ACEPTAR</a>
                 </div>
             </div>
