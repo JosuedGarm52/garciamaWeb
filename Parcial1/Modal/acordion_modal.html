@@ -211,7 +211,7 @@
                 </div>
                 <div class="modal_botones">
                     <a href="" class="boton">CERRAR</a>
-                    <a href="" class="boton">ACEPTAR</a>
+                    <a href="javascript:Ventana()" class="boton" target="_blank">ABRIR VENTANA</a>
                 </div>
             </div>
         </div>  
@@ -223,6 +223,9 @@
             document.getElementsByClassName("modal_cerrar")[0].addEventListener("click",function(){
                 document.getElementsByClassName("fondo_transparente")[0].style.display="none"
             })
+            function Ventana(){
+                window.open("google.com","Google","width=300, height=200")
+            }
         </script>
     </body> 
 </html>
