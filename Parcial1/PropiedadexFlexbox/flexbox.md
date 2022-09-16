@@ -59,6 +59,7 @@ space-around	|Distribuye los ítems dejando el mismo espacio a los lados de cada
 stretch	|Estira los ítems para ocupar de forma equitativa todo el espacio.
 
 ### Sobre el eje secundario
+### Padre
 #### align-items
 |Nombre | Descripcion|
 |--------|------------|
@@ -68,6 +69,7 @@ center	|Alinea los ítems al centro del eje secundario.
 stretch	|Alinea los ítems estirándolos de modo que cubran desde el inicio hasta el final del contenedor.
 baseline	|Alinea los ítems en el contenedor según la base del contenido de los ítems del contenedor.
 ###  align-self
+### Hijo
 |Nombre | Descripcion|
 |--------|------------|
 flex-start  |Alinea los ítems al principio del contenedor.
