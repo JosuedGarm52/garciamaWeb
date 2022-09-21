@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            
+        }
+        .contenedor{
+            background-color: rosybrown;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-auto-rows: minmax(100px, auto);
+            grid-gap: 10px;
+            overflow: scroll;
+        }
+        .caja{
+            background-color: chartreuse;
+            opacity: 30%;
+            border-radius: 9%;
+            
+        }
+        #caja1{
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+        #caja2{
+            grid-column: 2 / 4;
+            grid-row: 1;
+        }
+        #caja3{
+            grid-column: 1;
+            grid-row: 2 / 5;
+        }
+        #caja4{
+            grid-column: 3;
+            grid-row: 3;
+        }
+        #caja4{
+            grid-column: 2;
+            grid-row: 4;
+        }
+        #caja5{
+            grid-column: 3;
+            grid-row: 4;
+        }
+        #caja11{
+            grid-column: 1;
+            grid-row: 1;
+        }
+        #caja12{
+            grid-column: 3;
+            grid-row: 1;
+        }
+        #caja13{
+            grid-column: 2;
+            grid-row: 1;
+        }
+        #caja14{
+            grid-column: 1;
+            grid-row: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div id= "caja1" class="caja">Caja1</div>
+        <div id= "caja2" class="caja">Caja2</div>
+        <div id= "caja3" class="caja">Caja3</div>
+        <div id= "caja4" class="caja">Caja4</div>
+        <div id= "caja5" class="caja">Caja5</div> 
+        <div id= "caja11" class="caja">Caja11</div>
+        <div id= "caja12" class="caja">Caja12</div>
+        <div id= "caja13" class="caja">Caja13</div>
+        <div id= "caja14" class="caja">Caja14</div>
+        <div id= "caja15" class="caja">Caja15</div> 
+    </div>
+</body>
+</html>
