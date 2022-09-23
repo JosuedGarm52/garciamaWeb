@@ -44,6 +44,18 @@
         #caja2{
             grid-area: contr1;
         }
+        #caja2:hover{
+            transform: rotate(20deg);
+            background-color: blue;
+        }
+        #caja3:hover{
+            transform: rotate(320deg);
+            background-color: blue;
+        }
+        #caja4:hover{
+            transform: rotate(90deg);
+            background-color: blue;
+        }
         #caja3{
             grid-area: contr2;
         }
@@ -53,15 +65,41 @@
         #caja5{
             grid-area: endg;
         }
+        .caja img{
+            display: block;
+            width: 50%;
+            height: auto;
+        }
+        #img3{
+            width: 100%;
+        }
+        #img4{
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <div class="contenedor">
-        <div id= "caja1" class="caja">Caja1</div>
-        <div id= "caja2" class="caja">Caja2</div>
-        <div id= "caja3" class="caja">Caja3</div>
-        <div id= "caja4" class="caja">Caja4</div>
-        <div id= "caja5" class="caja">Caja5</div> 
+        <div id= "caja1" class="caja">
+            Caja 1 Mac os
+            <img class="imgex" src="img/macos.jpg" width="80%" height="90%">
+        </div>
+        <div id= "caja2" class="caja">
+            Caja 2 JAVA
+            <img class="imgex" src="img/Mine.jpg" width="200" height="100">
+        </div>
+        <div id= "caja3" class="caja">
+            Caja 3 Swift
+            <img class="imgex" id="img3" src="img/NasaWorldWind.jpg" width="200" height="100">
+        </div>
+        <div id= "caja4" class="caja">
+            Caja 4 Linux
+            <img class="imgex" id="img4" src="img/Linux.jpg" width="200" height="100">
+        </div>
+        <div id= "caja5" class="caja">
+            Caja 5 Sun
+            <img class="imgex" src="img/Sun.jpg" width="200" height="100">
+        </div> 
         
     </div>
 </body>
