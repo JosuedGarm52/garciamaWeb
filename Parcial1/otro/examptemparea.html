@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #page {
+        display: grid;
+        width: 100%;
+        height: 250px;
+        grid-template-areas: "head head"
+                            "nav  main"
+                            "nav  foot";
+        grid-template-rows: 50px 1fr 30px;
+        grid-template-columns: 150px 1fr;
+        }
+        @media  screen and (max-width:500px) {
+            #page{
+                grid-template-areas: "head head"
+                            "fool fool"
+                            "nav  main"
+                            "nav  foot";
+            }
+            .pag1{
+                grid: head;
+            }
+            .pag2{
+                grid: fool;
+            }
+            .pag3{
+                grid: nav;
+            }
+            .pag4{
+                grid: main;
+            }
+            .pag5{
+                grid: foot;
+            }
+        }
+        #page > header {
+        grid-area: head;
+        background-color: #8ca0ff;
+        }
+
+        #page > nav {
+        grid-area: nav;
+        background-color: #ffa08c;
+        }
+
+        #page > main {
+        grid-area: main;
+        background-color: #ffff64;
+        }
+
+        #page > footer {
+        grid-area: foot;
+        background-color: #8cffa0;
+        }
+    </style>
+</head>
+<body>
+    <section id="page">
+        <header class="pag1">Header</header>
+        <nav class="pag2">Navigation</nav>
+        <main class="pag3">Main area</main>
+        <footer class="pag4">Footer</footer>
+        <footer class="pag5">Footer</footer>
+    </section>
+</body>
+</html>

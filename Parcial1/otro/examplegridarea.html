@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;    
+            grid-template-areas:
+                'titulo titulo titulo titulo titulo'
+                'articulo1 articulo1 articulo2 articulo3 articulo4'
+                'articulo1 articulo1 articulo2 articulo5 articulo6';
+            background-color: aqua;
+            grid-gap:30px;    
+            width: 100%;
+            height: 250px;
+        }
+            .titulo {       
+            grid-area: titulo;
+            }
+            .articulo1 { grid-area: articulo1; } 
+            .articulo2 { grid-area: articulo2; } 
+            .articulo3 { grid-area: articulo3; } 
+            .articulo4 { grid-area: articulo4; } 
+            .articulo5 { grid-area: articulo5; } 
+            .articulo6 { grid-area: articulo6; }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="grid">
+            <div class="titulo">Articulos destacados</div>
+            <div class="articulo1"></div>
+            <div class="articulo2"></div>
+            <div class="articulo3"></div>  
+            <div class="articulo4"></div>
+            <div class="articulo5"></div>
+            <div class="articulo6"></div>
+        </div>
+    </body>
+</body>
+</html>
