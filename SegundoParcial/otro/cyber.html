@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(65, 150, 93);
+        }
+        .contenedor{
+            width: 100vw;
+            height: 100vw;
+        }
+        div.sidebar{
+            float:left;
+            background-color: lightgray;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            padding: 5px;
+        }
+        a:hover{
+            background-color: blue;
+            color: white;
+        }
+        div.content{
+            background-color: aquamarine;
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1500px;
+        }
+        .contenidoOption{
+            display: none;
+        }
+        input{display: none;}
+
+        input:checked + .slider{
+            display: none;
+        }
+        .w{
+            background-color: aliceblue;
+            position: relative;
+            width: auto;
+            height: 20px;
+        }
+        @media screen and (max-width: 1200px) {
+            div.sidebar{
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .sidebar a {float: left;}
+
+            div.content{margin-left: 0;}
+        }
+        @media screen and (max-width: 600px) {
+            div.sidebar{
+                float: none;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="w">
+        <div>a</div>
+    </div>
+    <div class="contenedor">
+        <div class="sidebar">
+            <input type="checkbox" id="regla">
+            <a id="opc1" href="#opcion1">opcion 1</a>
+            <a id="opc2" href="#opcion2">opcion 2</a>
+            <a id="opc3" href="#opcion3">opcion 3</a>
+            <a id="opc4" href="#opcion4">opcion 4</a>
+            <a id="opc5" href="#opcion5">opcion 5</a>
+        </div>
+        <div class="content">
+            <div id="opcion1" class="contenidoOption">opcion 1</div>
+            <div id="opcion2" class="contenidoOption">opcion 2</div>
+            <div id="opcion3" class="contenidoOption">opcion 3</div>
+            <div id="opcion4" class="contenidoOption">opcion 4</div>
+            <div id="opcion5" class="contenidoOption">opcion 5</div>
+        </div>
+    </div>
+    
+</body>
+</html>
