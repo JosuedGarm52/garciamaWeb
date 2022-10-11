@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <style type="text/css">
         .cajaRelativa{
             position: relative;
@@ -12,8 +13,8 @@
             height: 400px;
             width: 200px;
             overflow: scroll;/*Desborde*/
-            float: left;
-            left: 20%;
+            
+            
         }
         .cajaRelativa div{
             position: absolute;
@@ -38,6 +39,12 @@
             bottom: 15%;/*Fondo*/
             left: 3px; /*Izquierda*/
         }
+        .cajaBoton{
+            position: relative;
+            border: 4px solid black;
+            float: left;
+            left: 5%;
+        }
     </style>
 </head>
 <body>
@@ -49,6 +56,18 @@
 
         </div>
     </div>
-    
+    <div class="CajaBoton">
+        <Button id="miBoton1" onclick="alert('Click en boton 1')">Boton numero 1</Button>
+        <button id="miBoton2"> Boton numero 2</button>
+        <button id="miBoton3"> Boton numero 3</button>
+    </div>
+    <script>
+        document.getElementById("miBoton2").onclick = function(){
+            alert("Click en boton 2");
+        };
+        document.getElementById("miBoton3").addEventListener("click",function(){
+            alert("Boton numero 3");
+        });
+    </script>
 </body>
 </html>
