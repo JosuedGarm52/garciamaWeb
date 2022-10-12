@@ -110,6 +110,7 @@
         position: absolute;
         right: 0;
         top: 0;
+        height: 50px;
         }
 
         .topnav a:hover {
@@ -120,6 +121,10 @@
         .active {
         background-color: #04AA6D;
         color: white;
+        }
+        .checker{
+            position: relative;
+            width: 5%;
         }
     </style>
 </head>
@@ -162,27 +167,38 @@
         </div>
         <div class="sidebar">
             <input type="checkbox" id="burguer"><input>
+            
             <a id="opc1" href="#opcion1">opcion 1</a>
             <a id="opc2" href="#opcion2">opcion 2</a>
             <a id="opc3" href="#opcion3">opcion 3</a>
             <a id="opc4" href="#opcion4">opcion 4</a>
             <a id="opc5" href="#opcion5">opcion 5</a>
         </div>
-        <div class="content">
+        <div class="content" id="contentt">
            
             <div id="opcion1" class="contenidoOption">opcion 1</div>
             <div id="opcion2" class="contenidoOption">opcion 2</div>
             <div id="opcion3" class="contenidoOption">opcion 3</div>
             <div id="opcion4" class="contenidoOption">opcion 4</div>
             <div id="opcion5" class="contenidoOption">opcion 5</div>
+            <a class="checker" href="#Cerrar">x</a>
         </div>
     </div>
     <script>
         $(".menu").click(function(){
             $(this).parent().toggleClass("close");
         });
+        
         function myFunction() {
             var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        function myFunctiona() {
+            var x = document.getElementById("contentt");
             if (x.style.display === "block") {
                 x.style.display = "none";
             } else {
