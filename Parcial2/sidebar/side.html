@@ -125,6 +125,7 @@
         .checker{
             position: relative;
             width: 5%;
+            top: 3%;
         }
     </style>
 </head>
@@ -165,7 +166,7 @@
             <a href="section-static top" href="#profile"></a>
             <a href="section-static bottom" href="#dashboard"></a>
         </div>
-        <div class="sidebar">
+        <div class="sidebar" id="sb">
             <input type="checkbox" id="burguer"><input>
             
             <a id="opc1" href="#opcion1">opcion 1</a>
@@ -175,20 +176,29 @@
             <a id="opc5" href="#opcion5">opcion 5</a>
         </div>
         <div class="content" id="contentt">
-           
             <div id="opcion1" class="contenidoOption">opcion 1</div>
             <div id="opcion2" class="contenidoOption">opcion 2</div>
             <div id="opcion3" class="contenidoOption">opcion 3</div>
             <div id="opcion4" class="contenidoOption">opcion 4</div>
             <div id="opcion5" class="contenidoOption">opcion 5</div>
-            <a class="checker" href="#Cerrar">x</a>
+            <a class="checker" href="#Cerrar" onclick="ocultar()">x</a>
+            <a class="checker" href="#Abrir" onclick="rev()">y</a>
         </div>
     </div>
     <script>
-        $(".menu").click(function(){
+        /*$(".menu").click(function(){
             $(this).parent().toggleClass("close");
         });
-        
+        */
+        function ocultar()
+        {
+            document.getElementById("sb").style.display = "none";
+            
+        }
+        function rev()
+        {
+            document.getElementById("sb").style.display = "block";
+        }
         function myFunction() {
             var x = document.getElementById("myLinks");
             if (x.style.display === "block") {
