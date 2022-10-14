@@ -7,6 +7,7 @@
     <title>Sidebar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="sas/estilo.css" rel="stylesheet" type="text/css">
+    <script src="jquery-3.6.1.min.js"></script>
     <style>
         .root{ /*Para poder verla en todo el documento*/
             --colorm: #21264b;
@@ -186,18 +187,25 @@
         </div>
     </div>
     <script>
-        /*$(".menu").click(function(){
+        $(".menu").click(function(){
             $(this).parent().toggleClass("close");
+            
+            if(document.getElementById("sb").style.visibility == "hidden"){
+                document.getElementById("sb").style.visibility = "visible";
+            }else
+            {
+                document.getElementById("sb").style.visibility = "hidden";
+            }
         });
-        */
+        
         function ocultar()
         {
-            document.getElementById("sb").style.display = "none";
+            document.getElementById("sb").style.visibility = "hidden";
             
         }
         function rev()
         {
-            document.getElementById("sb").style.display = "block";
+            document.getElementById("sb").style.visibility = "visible";
         }
         function myFunction() {
             var x = document.getElementById("myLinks");
