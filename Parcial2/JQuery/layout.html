@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js">
+        
+    </script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            
+        }
+        .contenedor{
+            background-color: rosybrown;
+            display: grid;
+            grid-template-areas: 'headr headr headr'
+            'contr1 contr2 contr3'
+            'endg endg endg';
+            grid-gap: 10px;
+            overflow: scroll;
+            padding: 10px;
+        }
+        .caja{
+            background-color: chartreuse;
+            border-radius: 9%;
+            
+        }
+        .caja1{
+            background-color: gold;
+        }
+        .caja2{
+            background-color: red;
+        }
+        @media screen and (max-width:500px ) {
+            .contenedor{
+                grid-template-areas: 'headr headr'
+                'contr1 contr1'
+                'contr2 contr3'
+                'endg endg';
+            }
+        }
+        #caja1{
+            grid-column: 1/3;
+            grid-area: headr;
+        }
+        #caja2{
+            grid-area: contr1;
+        }
+        #caja2:hover{
+            transform: rotate(20deg);
+            background-color: blue;
+        }
+        #caja3:hover{
+            transform: rotate(320deg);
+            background-color: blue;
+        }
+        #caja4:hover{
+            transform: rotate(90deg);
+            background-color: blue;
+        }
+        #caja3{
+            grid-area: contr2;
+        }
+        #caja4{
+            grid-area: contr3;
+        }
+        #caja5{
+            grid-area: endg;
+        }
+        .caja img{
+            display: block;
+            width: 50%;
+            height: auto;
+        }
+        #img3{
+            width: 100%;
+        }
+        #img4{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor" id="cont">
+        <div id= "caja1" class="caja" onclick="CambiarCaja(this)">
+            Caja 1 Mac os
+            <img class="imgex" src="img/macos.jpg" width="80%" height="90%">
+        </div>
+        <div id= "caja2" class="caja">
+            Caja 2 JAVA
+            <img class="imgex" src="img/Mine.jpg" width="200" height="100">
+        </div>
+        <div id= "caja3" class="caja">
+            Caja 3 Swift
+            <img class="imgex" id="img3" src="img/NasaWorldWind.jpg" width="200" height="100">
+        </div>
+        <div id= "caja4" class="caja">
+            Caja 4 Linux
+            <img class="imgex" id="img4" src="img/Linux.jpg" width="200" height="100">
+        </div>
+        <div id= "caja5" class="caja">
+            Caja 5 Sun
+            <img class="imgex" src="img/Sun.jpg" width="200" height="100">
+        </div> 
+        
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#caja1").click(function(){
+                alert('tocaste caja 1');
+            });
+        });
+        $(document).ready(function(){
+            $("#caja2").click(function(){
+                alert('En la libreria');
+            });
+        });
+    </script>
+</body>
+</html>
