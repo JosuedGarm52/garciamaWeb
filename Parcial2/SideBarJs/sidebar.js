@@ -12,7 +12,7 @@
         document.getElementsByClassName("sidebar")[0].classList.toggle("esconder");
     });
     
-    document.getElementById(sidebarbtn).addEventListener("click",function(){
+    document.getElementById(sidebar-btn).addEventListener("click",function(){
         document.getElementById(sidebar-btn)[0].classList.toggle("active");
     });
 };
