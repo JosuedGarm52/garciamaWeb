@@ -4,19 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar</title>
+    <title>Bootstrap</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZwv-model-vue1T" crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <script src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script> 
+    <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script> 
+    <style >
+        .vis-container{
+        background-color: #90EE90;
+        border-radius: 20px;
+        height: 229px;
+        margin: 10px;
+        padding-top: 90px;
+        font-size: 2.592em;
+        text-align: center;
+        
+        }
+        .container-fluid{
+          background-color: blueviolet;
+          border: 2px solid black;
+        }
+        .cajita{
+          background-color: yellow;
+          border: 2px solid black;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../Bootstrap/">Atras</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Sección actual</li>
+                <li class="breadcrumb-item"><a href="../Bootstrap/">Atras</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sección actual</li>
             </ol>
-          </nav>
+        </nav>
     </div>
     <div>
         <div class="container-fluid">
@@ -26,14 +50,32 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-md-3 col-lg-9 col2">
-                    <p>Row Column 1</p>
+                <div class="col-sm-6 col-md-3 col-lg-9 col2 cajita">
+                    I AM THE STORM THAT IS APROCCHING, PROVOCKING...
                 </div>
-                <div class="col-sm-6 col-md-9 col-lg-3 col3">
+                <div class="col-sm-6 col-md-9 col-lg-3 col3 cajita">
                     <p>Row Column 2</p>
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            <div class="row">
+              <div id="scatterplot-container" class="col-sm-4">
+                <div class="vis-container">Scatter Plot</div>
+              </div>
+              <div id="bar-chart-container" class="col-sm-4">
+                <div class="vis-container">Bar Chart</div>
+              </div>
+              <div id="pie-chart-container" class="col-sm-4">
+                <div class="vis-container">Pie Chart</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div id="line-chart-container" class="vis-container">Line Chart</div>
+              </div>
+            </div>
+          </div>  
     </div>
 </body>
 </html>
