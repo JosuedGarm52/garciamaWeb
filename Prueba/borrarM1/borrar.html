@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        Clear the content of a div
+        using JavaScript
+    </title>
+      
+    <style>
+        #clear {
+            background-color:#006600;
+            color:white;
+            padding-top:50px;
+            opacity:0.7;
+            width : 400px;
+            height:250px;
+            border-radius:10%;
+            text-align:center;
+        }
+    </style>
+      
+    <!-- Script to use DOM innerHTML property
+        to clear the content -->
+    <script>
+        function clearcontent(elementID) {
+            document.getElementById(elementID).innerHTML = "";
+        }
+    </script>
+</head>
+   
+<body>
+    <div id= "clear">
+        <form>
+            <label>Enter first number</label><br>
+            <input type = "number" placeholder = "Enter number"
+                    name = "input1" min = "0"/>
+              
+            <br><br>
+              
+            <label>Enter Second number</label><br>
+            <input type = "number" placeholder = "Enter number" 
+                    name = "input2" min = "0"/>
+              
+            <br><br>
+              
+            <label>
+                Click on button to find sum of prime numbers
+            </label><br>
+            <button value = "find sum" type = "submit" 
+                    onclick = "clearcontent('clear')">
+                find sum
+            </button><br>
+        </form>
+    </div>
+</body>
+  
+</html>
