@@ -43,7 +43,7 @@
             width: 60%;
             height: 65%;
             left: 20%;
-            top: 50%;
+            top: 40%;
             text-align: center;
         }
         
@@ -55,6 +55,12 @@
                 top: 45%;
             }
         }
+        .cartax{
+            color: yellow;
+        }
+        .ccarta{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -62,9 +68,12 @@
         <div class="logo">
             <img src="imagenes\logo2_3.png"> 
         </div>
+        <div class="ccarta">
+            <img src="imagenes\cartax.jpg">
+        </div>
         <div class="container-fluid" id="estadistica">
             <div class="row">
-                <div class="col-sm-12 col1" id="TNombre">
+                <div class="col-sm-12 col1 cartax" id="ValorNombre">
                     <h3>Nombre</h3>
                 </div>
             </div>
@@ -83,10 +92,10 @@
                 </div> 
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col1 ">
+                <div class="col-lg-6 col-md-6 col-sm-6 col1 cartax" id="ValElixir">
                     Val Elixir
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col2 ">
+                <div class="col-lg-6 col-md-6 col-sm-6 col2 cartax" id="ValTipo">
                     Val Tipo
                 </div>
             </div>
@@ -105,20 +114,20 @@
                 </div> 
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col1 ">
+                <div class="col-lg-6 col-md-6 col-sm-6 col1 cartax" id="ValCalidad">
                     Val Calid
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-3 col2 ">
+                <div class="col-lg-6 col-md-6 col-sm-3 col2 cartax" id="ValArena">
                     Val Arena
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 col1" id="TNombre">
+                <div class="col-sm-12 col1" >
                     <h3>Descripcion</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 col1" id="TNombre">
+                <div class="col-sm-12 col1 cartax" id="ValDescripcion">
                     I am the storm that is approaching
                     Provoking black clouds in isolation
                     I am reclaimer of my name
@@ -192,8 +201,7 @@
             $("#estadistica").visibility = "visible";
             $("#estadistica").invisible();
             $("#estadistica").visible();
-
-            console.log("si");
+            Carta();
         });
         const Carta = async () =>{
             const response = await fetch('https://royaleapi.github.io/cr-api-data/json/cards.json');
@@ -201,18 +209,65 @@
             const users = await response.json();
 
             let table_body = ``;//alt+96
+            let Nombre = ``;
+            let Elixir = ``;
+            let Tipo = ``;
+            let calidad = ``;
+            let Arena = ``;
+            let desc = ``;
             users.forEach((user, index) => {
-                table_body += `<tr>
-                    <td>${user.key}</td>
-                    <td>${user.name}</td>
-                    <td>${user.elixir}</td>
-                    <td>${user.type}</td>
-                    <td>${user.rarity}</td>
-                    <td>${user.description}</td>
-                </tr>`
+                if(user.name != undefined && user.elixir != undefined 
+                && user.elixir != undefined 
+                && user.type != undefined 
+                && user.rarity != undefined 
+                && user.rarity != undefined)
+                {
+                    if(user.key == CartaNameAl()){
+                        console.log(user.name+","+user.elixir+","+user.type+","+user.rarity+","+user.arena+","+user.description)
+                        Nombre = `${user.name}`;
+                        Elixir = `${user.elixir}`;
+                        Tipo = `${user.type}`;
+                        calidad = `${user.rarity}`;
+                        Arena = `Arena: ${user.arena}`;
+                        desc = `${user.description}`;
+                    }
+                }
             });
-            //document.getElementById("tablabody_royale").innerHTML = table_body;
-            tablabody_royale.innerHTML = table_body;
+            
+            ValorNombre.innerHTML = Nombre;
+            ValElixir.innerHTML = Elixir;
+            ValTipo.innerHTML = Tipo;
+            ValCalidad.innerHTML = calidad;
+            ValArena.innerHTML = Arena;
+            ValDescripcion.innerHTML = desc;
+            console.log(Nombre+","+Elixir+","+Tipo+","+calidad+","+arena+","+desc);
+        }
+        function aleatorio(inferior, superior) {
+            var numPosibilidades = superior - inferior;
+            var aleatorio = Math.random() * (numPosibilidades + 1);
+            aleatorio = Math.floor(aleatorio);
+            return inferior + aleatorio;
+        }
+        function CartaNameAl(){
+            let x = aleatorio(1,7);
+            switch (x) {
+                case 1:
+                    return "knight";
+                case 2:
+                    return "archers";
+                case 3:
+                    return "pekka";
+                case 4:
+                    return "balloon";
+                case 5:
+                    return "baby-dragon";
+                case 6:
+                    return "lava-hound";
+                case 7:
+                    return "hunter";
+                default:
+                    return "knight"
+            }
         }
     </script>
     <script src="index.js">
