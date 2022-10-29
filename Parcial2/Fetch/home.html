@@ -8,25 +8,152 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/garciamaWeb/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="/garciamaWeb/Extra/jquery/jquery-3.6.1.min.js"></script>
-    
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .produccion{
+            height: 800px;
+            width: 100%;
+            background-image: url("imagenes/Fondo.jpg");
+        }
+        .imagenpruebax{
+            background-image: url("imagenes/Fondo.jpg");
+            background-size: 80%;
+            background-repeat:no-repeat;
+            background-position: center center;
+        }
+        .logo{
+            position: relative;
+            text-align: center;
+            top: 0%;
+        }
+        .cofre{
+            position: relative;
+            top: 61%;
+            left: 40%;
+        }
+        .container-fluid{
+            position: absolute;
+            visibility: hidden;
+            background-color: rgb(83, 40, 5);
+            color: aliceblue;
+            margin: 2px solid black;
+            width: 60%;
+            height: 65%;
+            left: 20%;
+            top: 50%;
+            text-align: center;
+        }
+        
+        @media screen and (min-width:1200px)  {
+            .container-fluid{
+                width: 50%;
+                height: 50%;
+                left: 324px;
+                top: 45%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <button id="btnPeticion">Peticion</button>
-    <div id="broma">
-        <table>
-            <thead>
-                <tr>
-                    <th>Key</th>
-                    <th>name</th>
-                    <th>Elixir</th>
-                    <th>Type</th>
-                    <th>Rarity</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody id="tablabody_royale"></tbody>
-        </table>
+    <div class="produccion">
+        <div class="logo">
+            <img src="imagenes\logo2_3.png"> 
+        </div>
+        <div class="container-fluid" id="estadistica">
+            <div class="row">
+                <div class="col-sm-12 col1" id="TNombre">
+                    <h3>Nombre</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 float-left col1 ">
+                    Foto 
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col2 ">
+                    Elixir
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 float-left col3 ">
+                    Foto 
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col4 ">
+                    Tipo
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col1 ">
+                    Val Elixir
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col2 ">
+                    Val Tipo
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 float-left col1 ">
+                    Foto 
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col2 ">
+                    Calidad
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 float-left col3 ">
+                    Foto 
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col4 ">
+                    Arena
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col1 ">
+                    Val Calid
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-3 col2 ">
+                    Val Arena
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col1" id="TNombre">
+                    <h3>Descripcion</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col1" id="TNombre">
+                    I am the storm that is approaching
+                    Provoking black clouds in isolation
+                    I am reclaimer of my name
+                    Born in flames, I have been blessed
+                    My family crest is a demon of death
+                    Forsakened, I am awakened
+                    A phoenix's ash in dark divine
+                    Descending misery
+                    Destiny chasing time
+                </div>
+            </div>
+        </div>
+        <div class="cofre" id="seccion-cofre">
+            <img id="cofre1" src="imagenes/cofre1.png" height="160" width="240">
+        </div>
     </div>
+    <div class="prueba">
+        <button id="btnPeticion">Peticion</button>
+        <div id="broma">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>name</th>
+                        <th>Elixir</th>
+                        <th>Type</th>
+                        <th>Rarity</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="tablabody_royale"></tbody>
+            </table>
+        </div>
+    </div>
+    
     <script>
         /*document.getElementById("btnPeticion").addEventListener("click",function(){
             url = "x";
@@ -49,9 +176,47 @@
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
+        (function($) {
+            $.fn.invisible = function() {
+                return this.each(function() {
+                    $(this).css("visibility", "hidden");
+                });
+            };
+            $.fn.visible = function() {
+                return this.each(function() {
+                    $(this).css("visibility", "visible");
+                });
+            };
+        }(jQuery));
+        $("#seccion-cofre").on('click', function() {
+            $("#estadistica").visibility = "visible";
+            $("#estadistica").invisible();
+            $("#estadistica").visible();
 
+            console.log("si");
+        });
+        const Carta = async () =>{
+            const response = await fetch('https://royaleapi.github.io/cr-api-data/json/cards.json');
+
+            const users = await response.json();
+
+            let table_body = ``;//alt+96
+            users.forEach((user, index) => {
+                table_body += `<tr>
+                    <td>${user.key}</td>
+                    <td>${user.name}</td>
+                    <td>${user.elixir}</td>
+                    <td>${user.type}</td>
+                    <td>${user.rarity}</td>
+                    <td>${user.description}</td>
+                </tr>`
+            });
+            //document.getElementById("tablabody_royale").innerHTML = table_body;
+            tablabody_royale.innerHTML = table_body;
+        }
+    </script>
+    <script src="index.js">
         
     </script>
-    <script src="index.js"></script>
 </body>
 </html>
