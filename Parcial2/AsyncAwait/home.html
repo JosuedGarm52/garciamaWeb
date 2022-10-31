@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/garciamaWeb/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="/garciamaWeb/Extra/jquery/jquery-3.6.1.min.js"></script>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .produccion{
+            height: 800px;
+            width: 100%;
+            background-image: url("imagenes/Fondo.jpg");
+        }
+        .imagenpruebax{
+            background-image: url("imagenes/Fondo.jpg");
+            background-size: 80%;
+            background-repeat:no-repeat;
+            background-position: center center;
+        }
+        .logo{
+            position: relative;
+            text-align: center;
+            top: 0%;
+        }
+        .cofre{
+            position: relative;
+            top: 41%;
+            left: 40%;
+        }
+        .container-fluid{
+            position: absolute;
+            visibility: hidden;
+            background-color: rgb(83, 40, 5);
+            color: aliceblue;
+            margin: 2px solid black;
+            width: 60%;
+            height: 65%;
+            left: 20%;
+            top: 40%;
+            text-align: center;
+        }
+        
+        @media screen and (min-width:1200px)  {
+            .container-fluid{
+                width: 50%;
+                height: 50%;
+                left: 324px;
+                top: 45%;
+            }
+        }
+        .cartax{
+            color: yellow;
+        }
+        .ccarta{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="produccion">
+        <div class="logo">
+            <img src="imagenes\logo2_3.png"> 
+        </div>
+        <div class="ccarta" id="ilus">
+            <img id="cartaFoto" src="imagenes\cartax.jpg" alt="Carta"  height="110" width="170">
+        </div>
+        <div class="container-fluid" id="estadistica">
+            <div class="row">
+                <div class="col-sm-12 col1 cartax" id="ValorNombre">
+                    <h3>Nombre</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 float-left col1 ">
+                    <img src="imagenes/elixir.jpg" alt="Carta" height="40" width="25">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col2 ">
+                    Elixir
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 float-left col3 ">
+                    Foto 
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col4 ">
+                    Tipo
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col1 cartax" id="ValElixir">
+                    Val Elixir
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col2 cartax" id="ValTipo">
+                    Val Tipo
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 float-left col1 ">
+                    Foto 
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col2 ">
+                    Calidad
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 float-left col3 ">
+                    <img src="imagenes/arena.jpg" alt="Carta" height="40" width="25" >
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col4 ">
+                    Arena
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col1 cartax" id="ValCalidad">
+                    Val Calid
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-3 col2 cartax" id="ValArena">
+                    Val Arena
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col1" >
+                    <h3>Descripcion</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col1 cartax" id="ValDescripcion">
+                    I am the storm that is approaching
+                    Provoking black clouds in isolation
+                    I am reclaimer of my name
+                    Born in flames, I have been blessed
+                    My family crest is a demon of death
+                    Forsakened, I am awakened
+                    A phoenix's ash in dark divine
+                    Descending misery
+                    Destiny chasing time
+                </div>
+            </div>
+        </div>
+        <div class="cofre" id="seccion-cofre">
+            <img id="cofre1" src="imagenes/cofre1.png" height="160" width="240">
+        </div>
+    </div>
+    <div class="prueba">
+        <button id="btnPeticion">Peticion</button>
+        <div id="broma">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>name</th>
+                        <th>Elixir</th>
+                        <th>Type</th>
+                        <th>Rarity</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="tablabody_royale"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        /*document.getElementById("btnPeticion").addEventListener("click",function(){
+            url = "x";
+            fetch(url)
+                //.then((respuesta) => {console.log(respuesta)});
+                .then((respuesta) => respuesta.json())
+                .then(datoJson => document.getElementById("broma").innerHTML= datoJson.value); //[value] ["value"]
+        });*/
+        /*
+        document.getElementById("btnPeticion").addEventListener("click",function(){
+            var url1 = "https://royaleapi.github.io/cr-api-data/json/cards.json"
+            fetch(url1)
+                //.then((respuesta) => {console.log(respuesta)});
+                .then((respuesta) => respuesta.json())
+                .then(datoJson => document.getElementById("broma").innerText = datoJson.value); //[value] ["value"]
+        });*/
+        /*document.getElementbyId("btn").addEventListener("click",async function(){
+            let respuesta = await fetch("api");
+            let datojson = await respuesta.json();
+            document.getElementById("caj").innerHTML=datojson.value;
+        });*/
+
+        var requestURL = 'https://royaleapi.github.io/cr-api-data/json/cards.json';
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+        (function($) {
+            $.fn.invisible = function() {
+                return this.each(function() {
+                    $(this).css("visibility", "hidden");
+                });
+            };
+            $.fn.visible = function() {
+                return this.each(function() {
+                    $(this).css("visibility", "visible");
+                });
+            };
+        }(jQuery));
+        $("#seccion-cofre").on('click', function() {
+            $("#estadistica").visibility = "visible";
+            $("#estadistica").invisible();
+            $("#estadistica").visible();
+            $("#cofre1").attr("src","imagenes/cofre2.png");
+            Carta();
+        });
+        const Carta = async () =>{
+            const response = await fetch('https://royaleapi.github.io/cr-api-data/json/cards.json');
+
+            const users = await response.json();
+
+            let table_body = ``;//alt+96
+            let Nombre = ``;
+            let Elixir = ``;
+            let Tipo = ``;
+            let calidad = ``;
+            let Arena = ``;
+            let desc = ``;
+            let carta2;
+            users.forEach((user, index) => {
+                if(user.name != undefined && user.elixir != undefined 
+                && user.elixir != undefined 
+                && user.type != undefined 
+                && user.rarity != undefined 
+                && user.rarity != undefined)
+                {
+                    carta2 = CartaNameAl()
+                    if(user.key == carta2){
+                        //console.log(user.name+","+user.elixir+","+user.type+","+user.rarity+","+user.arena+","+user.description)
+                        Nombre = `${user.name}`;
+                        Elixir = `${user.elixir}`;
+                        Tipo = `${user.type}`;
+                        calidad = `${user.rarity}`;
+                        Arena = `Arena: ${user.arena}`;
+                        desc = `${user.description}`;
+                    }
+                }
+            });
+            
+            ValorNombre.innerHTML = Nombre;
+            ValElixir.innerHTML = Elixir;
+            ValTipo.innerHTML = Tipo;
+            ValCalidad.innerHTML = calidad;
+            ValArena.innerHTML = Arena;
+            ValDescripcion.innerHTML = desc;
+            //console.log(Nombre+","+Elixir+","+Tipo+","+calidad+","+arena+","+desc);
+            let sourcee;
+            let deg = ``;
+            $("#cartaFoto").attr("src","Imagenes/risa.jpg");
+            ilus.innerHTML = `<img id="cartaFoto" src="Imagenes/Caballero.jpg" alt="Carta">`
+            if(Nombre != null)
+            {
+                if(carta2 == "knight")
+                {
+                    sourcee = "Imagenes/Caballero.jpg";
+                }else if(carta2 == "archers")
+                {
+                    sourcee = "Imagenes/arquera.jpg";
+                }
+                else if(carta2 == "pekka")
+                {
+                    sourcee = "Imagenes/pekka.jpg";
+                }else if(carta2 == "balloon")
+                {
+                    sourcee = "Imagenes/globo.jpg";
+                }else if(carta2 == "baby-dragon")
+                {
+                    sourcee = "Imagenes/baby.jpg";
+                }else if(carta2 == "lava-hound")
+                {
+                    sourcee = "Imagenes/sabueso.jpg";
+                }else if(carta2 == "hunter")
+                {
+                    sourcee = "Imagenes/cazador.jpg";
+                }else
+                {
+                    sourcee = "Imagenes/risa.jpg";
+                }
+                $("#cartaFoto").attr("src",""+sourcee);
+                ilus.innerHTML = `<img id="cartaFoto" src="`+sourcee+`" alt="Carta">`
+            }
+        }
+        function aleatorio(inferior, superior) {
+            var numPosibilidades = superior - inferior;
+            var aleatorio = Math.random() * (numPosibilidades + 1);
+            aleatorio = Math.floor(aleatorio);
+            return inferior + aleatorio;
+        }
+        function CartaNameAl(){
+            let x = aleatorio(1,7);
+            switch (x) {
+                case 1:
+                    return "knight";
+                case 2:
+                    return "archers";
+                case 3:
+                    return "pekka";
+                case 4:
+                    return "balloon";
+                case 5:
+                    return "baby-dragon";
+                case 6:
+                    return "lava-hound";
+                case 7:
+                    return "hunter";
+                default:
+                    return "knight"
+            }
+        }
+    </script>
+    <script src="index.js">
+        
+    </script>
+</body>
+</html>
