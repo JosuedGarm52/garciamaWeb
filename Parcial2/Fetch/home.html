@@ -68,8 +68,8 @@
         <div class="logo">
             <img src="imagenes\logo2_3.png"> 
         </div>
-        <div class="ccarta">
-            <img src="imagenes\cartax.jpg">
+        <div class="ccarta" id="ilus">
+            <img id="cartaFoto" src="imagenes\cartax.jpg" alt="Carta" >
         </div>
         <div class="container-fluid" id="estadistica">
             <div class="row">
@@ -79,7 +79,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3 float-left col1 ">
-                    Foto 
+                    <img src="imagenes/elixir.jpg" alt="Carta" height="40" width="25">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col2 ">
                     Elixir
@@ -107,7 +107,7 @@
                     Calidad
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 float-left col3 ">
-                    Foto 
+                    <img src="imagenes/arena.jpg" alt="Carta" height="40" width="25" >
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col4 ">
                     Arena
@@ -201,6 +201,7 @@
             $("#estadistica").visibility = "visible";
             $("#estadistica").invisible();
             $("#estadistica").visible();
+            $("#cofre1").attr("src","imagenes/cofre2.png");
             Carta();
         });
         const Carta = async () =>{
@@ -215,6 +216,7 @@
             let calidad = ``;
             let Arena = ``;
             let desc = ``;
+            let carta2;
             users.forEach((user, index) => {
                 if(user.name != undefined && user.elixir != undefined 
                 && user.elixir != undefined 
@@ -222,8 +224,9 @@
                 && user.rarity != undefined 
                 && user.rarity != undefined)
                 {
-                    if(user.key == CartaNameAl()){
-                        console.log(user.name+","+user.elixir+","+user.type+","+user.rarity+","+user.arena+","+user.description)
+                    carta2 = CartaNameAl()
+                    if(user.key == carta2){
+                        //console.log(user.name+","+user.elixir+","+user.type+","+user.rarity+","+user.arena+","+user.description)
                         Nombre = `${user.name}`;
                         Elixir = `${user.elixir}`;
                         Tipo = `${user.type}`;
@@ -241,6 +244,41 @@
             ValArena.innerHTML = Arena;
             ValDescripcion.innerHTML = desc;
             console.log(Nombre+","+Elixir+","+Tipo+","+calidad+","+arena+","+desc);
+            let sourcee;
+            let deg = ``;
+            $("#cartaFoto").attr("src","Imagenes/risa.jpg");
+            ilus.innerHTML = `<img id="cartaFoto" src="Imagenes/Caballero.jpg" alt="Carta">`
+            if(Nombre != null)
+            {
+                if(carta2 == "knight")
+                {
+                    sourcee = "Imagenes/Caballero.jpg";
+                }else if(carta2 == "archers")
+                {
+                    sourcee = "Imagenes/arquera.jpg";
+                }
+                else if(carta2 == "pekka")
+                {
+                    sourcee = "Imagenes/pekka.jpg";
+                }else if(carta2 == "balloon")
+                {
+                    sourcee = "Imagenes/globo.jpg";
+                }else if(carta2 == "baby-dragon")
+                {
+                    sourcee = "Imagenes/baby.jpg";
+                }else if(carta2 == "lava-hound")
+                {
+                    sourcee = "Imagenes/sabueso.jpg";
+                }else if(carta2 == "hunter")
+                {
+                    sourcee = "Imagenes/cazador.jpg";
+                }else
+                {
+                    sourcee = "Imagenes/risa.jpg";
+                }
+                $("#cartaFoto").attr("src",""+sourcee);
+                ilus.innerHTML = `<img id="cartaFoto" src="`+sourcee+`" alt="Carta">`
+            }
         }
         function aleatorio(inferior, superior) {
             var numPosibilidades = superior - inferior;
