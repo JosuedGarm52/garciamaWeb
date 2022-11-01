@@ -22,12 +22,10 @@
             <img src="imagenes\logo2_3.png"> 
         </div>
         <div class="ccarta" id="ilus">
-            <img id="cartaFoto" src="imagenes\cartax.jpg" alt="Carta"  height="240" width="300">
+            <img id="cartaFoto" src="imagenes\cartax.jpg" alt="Carta" >
         </div>
         
-        <div class="cofre" id="seccion-cofre">
-            <img id="cofre1" src="imagenes/cofre1.png" height="160" width="240">
-        </div>
+        
     </div>
     <h1>fetch</h1>
     <div class="prueba">
@@ -60,6 +58,7 @@
         
         btnPeticion.addEventListener("click",function(){
             poner();
+            listUser();
         });
         const poner = () =>{
             let table_body = ``;//alt+96
@@ -76,10 +75,12 @@
                         <td>${user.type}</td>
                         <td>${user.rarity}</td>
                         <td>${user.description}</td>
-                    </tr>`
+                    </tr>`;
+                    console.log(user.key);
                 })
             );
             tablabody_royale.innerHTML = table_body;
+            
         }
         var requestURL = 'https://royaleapi.github.io/cr-api-data/json/cards.json';
         var request = new XMLHttpRequest();
@@ -104,7 +105,18 @@
             $("#estadistica").visible();
             $("#cofre1").attr("src","imagenes/cofre2.png");
         });
-        
+        const listUser = async () =>{
+    const response = await fetch('https://royaleapi.github.io/cr-api-data/json/cards.json');const users = await response.json();let table_body = ``;users.forEach((user, index) => { table_body += `<tr><td>${user.key}</td>
+            <td>${user.name}</td>
+            <td>${user.elixir}</td>
+            <td>${user.type}</td>
+            <td>${user.rarity}</td>
+            <td>${user.description}</td>
+        </tr>`
+    });
+    //document.getElementById("tablabody_royale").innerHTML = table_body;
+    tablabody_royale.innerHTML = table_body;
+}
     </script>
 </body>
 </html>
