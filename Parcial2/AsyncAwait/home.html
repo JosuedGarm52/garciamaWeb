@@ -282,7 +282,8 @@
                     sourcee = "Imagenes/risa.jpg";
                 }
                 $("#cartaFoto").attr("src",""+sourcee);
-                ilus.innerHTML = `<img id="cartaFoto" src="`+sourcee+`" alt="Carta">`
+                ilus.innerHTML = `<img id="cartaFoto" src="`+sourcee+`" alt="Carta">`;
+                console.log(sourcee+" h "+Nombre);
             }
         }
         function aleatorio(inferior, superior) {
