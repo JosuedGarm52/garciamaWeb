@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo</title>
+</head>
+<body>
+    <label for="cad">Teclee una cadena: </label>
+    <input id="cad" type="text" >
+    <button id="btn">Procesar</button>
+    <input id="cadM" type="text" disabled>
+    
+    <!--import estatico, carga todos los elementos del script-->
+    <!--<script type="module">
+        import{mayuscula,longitud} from "./modulo.js"
+
+        document.getElementById("btn").addEventListener("click",function(){
+            console.log("click en boton");
+            let varcad = cad.value;
+            let varcaM = mayuscula(varcad);
+            cadM.value = varcaM;
+        });
+        
+        console.log(mayuscula("ddd"));
+    </script>
+    -->
+    <!--Import estatico, solo carga lo que se va a necesitar-->
+    <!--<script type="module">
+        import * as functiones from "./modulo.js";
+
+        document.getElementById("btn").addEventListener("click",function(){
+
+            console.log("click en boton");
+            let varcad = cad.value;
+            let varcaM = functiones.mayuscula(varcad);
+            cadM.value = varcaM;
+        });
+        
+        console.log(functiones.mayuscula("ddd"));
+    </script>
+    -->
+    <!--Import dinamico, solo lo carga cuando sea requerido-->
+    <script type="module">
+        document.getElementById("btn").addEventListener("click",function(){
+
+            import("./modulo.js").then(function(funciones){ //import dinamico, si es que se cumplen ciertas condiciones para no tener cargado todo
+                let varcad = cad.value;
+                let varcaM = funciones.mayuscula(varcad);
+                cadM.value = varcaM;
+            });
+        });
+        
+        //console.log(functiones.mayuscula("ddd"));
+    </script>
+</body>
+</html>
