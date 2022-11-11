@@ -10,3 +10,5 @@ npm install webpack -cli -D
 npm run build
 
 5- instalar plugin para generar html
+
+5.1 - Instalar sweetalert2
