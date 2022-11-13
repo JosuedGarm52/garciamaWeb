@@ -8,3 +8,4 @@ Tarea 3.3.2 Completo |ProyectoWP completo y se agrego un nuevo npm
 Tarea 3.4.1 guardar  | Boostrap
 Tarea 3.4.2 Correccion  | Correccion
 Tarea 3.4.3 Recarga 
+Tarea 3.4.4 Acabado temporalmente  

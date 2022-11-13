@@ -7,7 +7,9 @@
     
     <link rel="stylesheet" href="/garciamaWeb/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="/garciamaweb/Extra/jquery/jquery-3.6.1.min.js">
+    <script language="JavaScript" type="text/javascript" src="/garciamaweb/Extra/jquery/jquery-3.6.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="datepicker.css">
 
     <style>
         .todo{
@@ -18,54 +20,83 @@
         .row{
             margin-left: 15px;
         }
+        .add-on{
+            width: 12px;
+        }
+        #userx{
+            max-width: 430px;
+        }
     </style>
     
 </head>
 <body>
     <div class="todo">
-        <h1>Registro de la pagina</h1>
+        <h1>Registro de usuario</h1>
+        <h2>Plataforma EMusic</h2>
     <form>
         <div class="row">
-            <div class="mb-3">
+            <div class="col-sm-12 col-md-12 col-lg-6 col1 mb-3">
                 <label for="exampleInputNombre" class="form-label">Nombre(s):</label>
                 <input type="password" class="form-control" id="exampleInputNombre">
             </div>
-            <div class="mb-3">
+            <div class="col-sm-12 col-md-12 col-lg-6 col2 mb-3">
                 <label for="exampleInputApellido" class="form-label">Apellido:</label>
                 <input type="password" class="form-control" id="exampleInputApellido">
             </div>
-            <div class="mb-3">
+        </div>
+        <div class="row">   
+            <div class="col-sm-12 col-md-6 col-lg-6 col3 mb-3">
                 <label for="fecha" class="from-label">Fecha de Nacimiento: </label>
-                <div class="input-append date" id="datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-                    <input size="16" type="text" value="12-02-2012" readonly>
-                    <span class="add-on"><i class="icon-th"></i></span>
+                <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                    <input class="span2" size="16" type="text" value="12-02-2012">
+                    <span class="add-on">
+                        <i class="icon-th"></i>
+                    </span>
                 </div>
             </div>
-            <div class="input-group mb-3">
+            <div class="col-sm-12 col-md-6 col-lg-6 col3 input-group mb-3" id="userx">
+                <!--<label for="user" class="from-user">Usuario: </label>-->
                 <span class="input-group-text" id="basic-addon1">@</span>
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
               </div>
-            <div class="mb-3">
+        </div>
+        <div class="row">   
+            <div class="col-sm-12 col-md-12 col-lg-6 col4 mb-3">
                 <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
-            <div class="mb-3">
+            <div class="col-sm-12 col-md-12 col-lg-6 col4 mb-3">
                 <label for="exampleInputEmail2" class="form-label">Confirmar Correo Electronico</label>
                 <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
-            <div class="mb-3">
+        </div>
+        <div class="row">   
+            <div class="col-sm-12 col-md-12 col-lg-6 col5 mb-3">
                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class="mb-3">
+            <div class="col-sm-12 col-md-12 col-lg-6 col6 mb-3">
                 <label for="exampleInputPassword2" class="form-label">Confirmar Contraseña</label>
                 <input type="password" class="form-control" id="exampleInputPassword2">
             </div>
         </div>
         <div class="row">
-            <div class="mb-3 form-check">
+            <label for="Genero">Genero</label>
+            <div class="col-sm-12 col-md-6 col-lg-6 col7 btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input type="checkbox" value="Masculino" autocomplete="on"> Masculino
+                </label>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col7 btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    <input type="checkbox" value="Femenino" autocomplete="off"> Femenino
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 col7 mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
@@ -91,7 +122,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     
     <script>
-        //$('#datepicker').datepicker();
         /*const toastLiveExample = document.getElementById('liveToast');
         document.getElementById('liveToastBtn').addEventListener('click',()=>{
             const toast = new bootstrap.Toast(toastLiveExample);
@@ -109,5 +139,6 @@
         }
 
     </script>
+    
 </body>
 </html>
