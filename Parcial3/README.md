@@ -4,3 +4,4 @@ Tarea 3.2.1 Ejercicio en clase Modulo Nativo y ModuloCommonJs
 Tarea 3.2.2 Correcion  
 Tarea 3.3.0.1 Guardado
 Tarea 3.3.1 Primera Version  
+Tarea 3.3.2 Completo |ProyectoWP completo y se agrego un nuevo npm  
