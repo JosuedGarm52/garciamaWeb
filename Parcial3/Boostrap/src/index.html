@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    
+    <link rel="stylesheet" href="/garciamaWeb/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/garciamaweb/Extra/jquery/jquery-3.6.1.min.js">
+
+    <style>
+        .todo{
+            box-sizing: border-box;
+            padding: 1px;
+            
+        }
+        .row{
+            margin-left: 15px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="todo">
+        <h1>Registro de la pagina</h1>
+    <form>
+        <div class="row">
+            <div class="mb-3">
+                <label for="exampleInputNombre" class="form-label">Nombre(s):</label>
+                <input type="password" class="form-control" id="exampleInputNombre">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputApellido" class="form-label">Apellido:</label>
+                <input type="password" class="form-control" id="exampleInputApellido">
+            </div>
+            <div class="mb-3">
+                <label for="fecha" class="from-label">Fecha de Nacimiento: </label>
+                <div class="input-append date" id="datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                    <input size="16" type="text" value="12-02-2012" readonly>
+                    <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail2" class="form-label">Confirmar Correo Electronico</label>
+                <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword2" class="form-label">Confirmar Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+            <!--<img src="..." class="rounded me-2" alt="...">-->
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+        </div>
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+    <script>
+        //$('#datepicker').datepicker();
+        /*const toastLiveExample = document.getElementById('liveToast');
+        document.getElementById('liveToastBtn').addEventListener('click',()=>{
+            const toast = new bootstrap.Toast(toastLiveExample);
+            toast.show();
+        });*/
+
+        const toastTrigger = document.getElementById('liveToastBtn');
+        const toastLiveExample = document.getElementById('liveToast');
+        if (toastTrigger) {
+            toastTrigger.addEventListener('click', () => {
+                const toast = new bootstrap.Toast(toastLiveExample);
+
+                toast.show();
+            });
+        }
+
+    </script>
+</body>
+</html>
