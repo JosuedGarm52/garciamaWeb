@@ -7,9 +7,7 @@
     
     <link rel="stylesheet" href="/garciamaWeb/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="/garciamaweb/Extra\jquery\jquery-3.6.1.min.js">
-
-    </script>
+    <link rel="stylesheet" href="/garciamaweb/Extra/jquery/jquery-3.6.1.min.js">
 
     <style>
         .todo{
@@ -21,6 +19,7 @@
             margin-left: 15px;
         }
     </style>
+    
 </head>
 <body>
     <div class="todo">
@@ -37,11 +36,10 @@
             </div>
             <div class="mb-3">
                 <label for="fecha" class="from-label">Fecha de Nacimiento: </label>
-                <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-                    <input class="span2" size="16" type="text" value="12-02-2012">
+                <div class="input-append date" id="datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                    <input size="16" type="text" value="12-02-2012" readonly>
                     <span class="add-on"><i class="icon-th"></i></span>
                 </div>
-                <div id="dp6" data-date="12-02-2012" data-date-format="dd-mm-yyyy"></div>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">@</span>
@@ -91,10 +89,9 @@
 
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
+    
     <script>
-        $('.datepicker').datepicker()
-
+        //$('#datepicker').datepicker();
         /*const toastLiveExample = document.getElementById('liveToast');
         document.getElementById('liveToastBtn').addEventListener('click',()=>{
             const toast = new bootstrap.Toast(toastLiveExample);
