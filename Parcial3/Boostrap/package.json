@@ -37,6 +37,7 @@
     "merge-stream": "^2.0.0",
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
+    "moment": "^2.29.4",
     "neo-async": "^2.6.2",
     "node-releases": "^2.0.6",
     "picocolors": "^1.0.0",
