@@ -10,3 +10,4 @@ Tarea 3.4.2 Correccion  | Correccion
 Tarea 3.4.3 Recarga 
 Tarea 3.4.4 Acabado temporalmente  
 Tarea 3.5.1 Boostrap responsivo parte 2  | Lunes
+Tarea 3.6.1 php en el trabajo anterior | Miercoles

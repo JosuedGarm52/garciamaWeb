@@ -45,12 +45,12 @@
             <form>
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6 col1 mb-3">
-                        <label for="exampleInputNombre" class="form-label">Nombre(s):</label>
-                        <input type="password" class="form-control" id="exampleInputNombre">
+                        <label for="exampleInputNombre" class="form-label">Nombre(s): </label>
+                        <input type="text" class="form-control" id="exampleInputNombre">
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6 col2 mb-3">
                         <label for="exampleInputApellido" class="form-label">Apellido:</label>
-                        <input type="password" class="form-control" id="exampleInputApellido">
+                        <input type="text" class="form-control" id="exampleInputApellido">
                     </div>
                 </div>
                 <div class="row">   
@@ -65,7 +65,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-6 col3 input-group mb-3" id="userx">
                         <!--<label for="user" class="from-user">Usuario: </label>-->
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="InputUser"type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">   
@@ -109,9 +109,10 @@
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="Subir">Submit</button>
                 <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
                 <button type="button" class="btn btn-primary" id="myInput">Modal</button>
+                <button type="button" class="btn btn-primary" id="btnGet">get</button>
         
                 <div class="toast-container position-fixed bottom-0 end-0 p-3">
                 <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -191,6 +192,8 @@
             }
             
         });
+
     </script>
+    <script src="index.js"></script>
 </body>
 </html>
