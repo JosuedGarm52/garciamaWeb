@@ -18,19 +18,6 @@
             document.getElementById("exampleInputPassword2").value=reg.Contraseña;
         }
         
-        
-        
-
-    function refrescar(reg){
-            document.getElementById("exampleInputNombre").value=reg.Nombre;
-            document.getElementById("exampleInputApellido").value=reg.Apellido;
-            document.getElementById("InputUser").value=reg.Username;
-            document.getElementById("exampleInputEmail1").value=reg.Correo;
-            document.getElementById("exampleInputEmail2").value=reg.Correo;
-            document.getElementById("exampleInputPassword1").value=reg.Contraseña;
-            document.getElementById("exampleInputPassword2").value=reg.Contraseña;
-        }
-        
     });
     
 /*
