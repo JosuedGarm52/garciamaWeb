@@ -14,3 +14,4 @@ Tarea 3.6.1 php en el trabajo anterior | Miercoles
 Tarea 3.4.5 Cambio de nombre de ProyectoWP a Webpack
 Tarea 3.5.1 Conectar BD | mysqli
 Tarea 3.6.1 Formulario con BD | FormData
+Tarea 3.6.2 Modal con error ^
