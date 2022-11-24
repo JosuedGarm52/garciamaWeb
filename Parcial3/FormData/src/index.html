@@ -112,7 +112,9 @@
                 <button type="submit" class="btn btn-primary" id="Subir">Submit</button>
                 <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
                 <button type="button" class="btn btn-primary" id="myInput">Modal</button>
-                <button type="button" class="btn btn-primary" id="btnBD">BD Data</button>
+                <button type="button" class="btn btn-primary" id="btnBD">Rellenar</button>
+                <button type="button" class="btn btn-primary" id="btnBD2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Modal ID</button>
+
         
                 <div class="toast-container position-fixed bottom-0 end-0 p-3">
                 <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -145,11 +147,39 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar">Cerrar</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary" id="modalsave">Save changes</button>
                     </div>
                   </div>
                 </div>
             </div>
+
+            <form id="modalid">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Introduce ID</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                    <div class="mb-3">
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="message_text" class="col-form-label">ID:</label>
+                        <textarea class="form-control" id="message_text" name="message_text"></textarea>
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnServer" data-bs-dismiss="modal">Consulta al server</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            </form>
     </div>
     
 
