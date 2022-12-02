@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF</title>
+</head>
+<body>
+    <form id="formula">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+        <input type="button" id="btn" value="Crear pdf">
+    </form>
+    <script>
+        document.getElementById('nombre').focus();
+
+        document.getElementById("btn").addEventListener('click',async ()=>{
+            //alert("Click en el boton");
+            let miForm = document.getElementById("formula");
+
+            let bodyContent = new FormData(miForm);
+            //bodyContent.append("Nombre", "Josue");
+
+            let response = await fetch("http://localhost/garciamaWeb/Parcial3/pdf/agregarpdf2.php", { 
+                method: "POST",
+                body: bodyContent
+            });
+
+            let archivopdf = await response.blob();
+            let archivourl = URL.createObjectURL(archivopdf);
+
+            window.open(archivourl);
+        });
+
+        
+
+    </script>
+</body>
+</html>
