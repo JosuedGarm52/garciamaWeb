@@ -19,3 +19,4 @@ Tarea 3.7.1 Modal para llenado
 Tarea 3.8.1 Construir un grid jquery | Grid
 a
 Tarea 3.9.1 Agregar grid de gridjs | GridJs
+Tarea 3.10.1 Creacion de cookies |cookie
