@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Music</title>
+
+    <link rel="stylesheet" href="/garciamaWeb/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--<link rel="stylesheet" href="/repos/PROYECTOBETA/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
+    <script language="JavaScript" type="text/javascript" src="/garciamaweb/Extra/jquery/jquery-3.6.1.min.js"></script>
+    <!--<script language="JavaScript" type="text/javascript" src="/repos/PROYECTOBETA/Extra/jquery/jquery-3.6.1.min.js"></script>-->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?Family=Bebas+neue&family=Didact+Gothic&display=swap">
+    <link rel="stylesheet" href="style.css">
+    
+    <style src="style.css"></style>
+    <style>
+        body {
+            margin: 0;
+            padding: 60px 0 0 0;
+        }
+        
+        #page {
+            margin: 0px auto;
+            width: 100%;
+        }
+        .nextFondo a{
+            color:yellow;
+        }
+        #header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #333;
+            font-size: 20px;
+            color: #FFFFFF;
+            height: 130px;
+        }
+        
+        #content {
+            height: 100%;
+            overflow: auto;
+            padding: 0% 1% 0% 1%;
+            width: 98%;
+        }
+        .logo{
+            position: relative;
+            top: 2%;
+        }
+        .checkFondo{
+            position: relative;
+        }
+        .titulo{
+            color: rgb(177, 22, 216);
+        }
+        .breadcrumb{
+            background-color: #333;
+        }
+        .nextFondo{
+            background-color: rgb(230, 82, 230);
+            display: flex;
+            border: 1px solid #000;
+            width: 20%;
+            height: 35px;
+            float: right;
+        }
+        .nextBoton{
+            text-align: center;
+            border: 3px solid black;
+            width: 50%;
+            height: 100%;
+            
+        }
+        .cabeza{
+            position: relative;
+            display: flex;
+            border: 1px solid black;
+            background-color: rgb(72, 216, 16);
+            border: 1px solid black;
+            width: 100%;
+            height: 50px;
+            bottom: 0px;
+        }
+        .subcabeza,.añadir{
+            text-align: center;
+            width: 20%;
+            font-size: xx-large;
+        }
+        .subcabeza{
+            border-right: 1px solid black;
+            
+        }
+        .añadir{
+            color: #FFFFFF;
+            border-radius: 50%;
+            background-color: rgb(9, 65, 46);
+            width: 100%;
+            height: 100%;
+        }
+        
+        #cajacookies {
+            display: none;
+            box-shadow: 0px 0px 5px 5px #808080;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-bottom: 0px;
+            position: fixed;
+            bottom: 70px;
+            width: 100%;
+        }
+
+        #cajacookies button {
+            color: black;
+        }
+        #delcookie{
+            color: blue;
+        }
+        .virtual{
+            width: 50%;
+            display: none;
+            border: 3px solid black;
+            text-align: center;
+        }
+        .textoimg{
+            width: 200px;
+            text-align: start;
+            white-space: initial;
+            background-color: black;
+            color: wheat;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div class="titulo">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-10 col-md-10 col-lg-10 col1 mb-3">
+                            <img class="logo" src="imx/blanco.jpg" height="30" width="40"> 
+                            Capital Music
+                            <div class="row">
+                              <div class="col-8 col-sm-6">
+                                <div>
+                                    <nav aria-label="breadcrumb" id="barra">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="../">Atras</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2 col1 mb-3">
+                            <div class="checkFondo">
+                                <div class="theme-switch-wrapper">
+                                    <label class="theme-switch" for="checkbox">
+                                        <input type="checkbox" id="checkbox">
+                                        <div class="slider round"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content"> 
+            <p>Lorem Ipsum...</p> 
+        </div>
+        <div id="content"> 
+            <p>Lorem Ipsum...</p> 
+        </div>
+        <div>
+            
+                <a id="delcookie" href="#">borrar cookie</a>
+            
+            <div class="nextFondo">
+                <div  class="nextBoton">
+                    <a href="login.html#Inicio" title="Inicio">Inicia Sesion</a>
+                </div>
+                <div  class="nextBoton">   
+                    <a href="login.html#Reg" title="Reg">Registrarse</a>
+                </div>
+                <div class='virtual'>
+                    <a id="acuenta" href='./miCuenta.html'> Mi cuenta </a>
+                </div>
+                <div class='virtual'>
+                    <a id="btncerrar" href='./index.html'> Cerrar Sesion </a>
+                </div>
+            </div>
+            <div class="cabeza">
+                <div class="subcabeza">
+                    Novedades 
+                </div>
+                <div class="subcabeza">
+                    Explorar
+                </div>
+                <div class="subcabeza">
+                    <div class="añadir" id="mas">
+                    +
+                    </div>  
+                </div>
+                <div class="subcabeza">
+                    Playlists
+                </div>
+                <div class="subcabeza"> 
+                    Artistas
+                </div>
+                
+            </div>
+            <div class="contenidox">
+                <marquee  scrolldelay="1" scrollamount="10" direction="left" loop="infinite" onmouseout="this.start()" onmouseover="this.stop()">
+                    <div>
+                        <img title="Bad-Bunny" alt="Bad Bunny vuelve a encabezar la lista de los más escuchados en Spotify por tercer año consecutivo y Quevedo se cuela con 'Quédate'" src="https://www.20minutos.es/files/image_150_113/uploads/imagenes/2022/09/02/el-cantante-puertorriqueno-bad-bunny.jpeg" height ="200px" width="200px"/>
+                        <div class="textoimg">
+                            Bad Bunny vuelve a encabezar la lista de los más escuchados en Spotify por tercer año consecutivo y Quevedo se cuela con 'Quédate'
+                        </div>
+                        &nbsp;&nbsp;
+                    </div>
+                    &nbsp;&nbsp;
+                    
+                    <div>
+                        <img title="Rosalia" alt="Rosalía gana el Latin Grammy al mejor álbum del año con 'Motomami'; Jorge Drexler y C. Tangana, premio a la mejor canción"  src="https://www.20minutos.es/files/image_150_113/uploads/imagenes/2022/11/18/rosalia.jpeg" height ="200px" width="200px" /></a>
+                        <div class="textoimg">
+                            Rosalía gana el Latin Grammy al mejor álbum del año con 'Motomami'; Jorge Drexler y C. Tangana, premio a la mejor canción
+                        </div>
+                        &nbsp;&nbsp;
+                    </div>
+                    &nbsp;&nbsp;
+                    
+                    <div>
+                        <img title="Ibai" alt="Ros"  src="https://imagenes.20minutos.es/files/image_990_v3/uploads/imagenes/2022/08/22/ibai-llanos-grabando-una-cancion-de-rap.png" height ="200px" width="200px" /></a>
+                        <div class="textoimg">
+                            Ibai Llanos protagoniza el nuevo vídeo de Bizarrap, donde anuncia su anticipada sesión #50
+                        </div>
+                        &nbsp;&nbsp;
+                    </div>
+                </marquee>
+            </div>
+        </div>
+    </div>
+    <div id="cajacookies">
+        <p><button onclick="aceptarCookies()" class="pull-right"><i class="fa fa-times"></i> Aceptar y cerrar éste mensaje</button>
+        Éste sitio web usa cookies, si permanece aquí acepta su uso.
+        Puede leer más sobre el uso de cookies en nuestra <a href="#">política de privacidad</a>.
+        </p>
+    </div>
+    <script src="index.js">
+        document.getElementById("mas").addEventListener('click',()=>{
+            console.log("xd");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta</title>
+
+    <!--<link rel="stylesheet" href="/garciamaWeb/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
+    <link rel="stylesheet" href="/repos/PROYECTOBETA/Extra/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--<script language="JavaScript" type="text/javascript" src="/garciamaweb/Extra/jquery/jquery-3.6.1.min.js"></script>-->
+    <script language="JavaScript" type="text/javascript" src="/repos/PROYECTOBETA/Extra/jquery/jquery-3.6.1.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .sup{
+            display: flex;
+            width: 100%;
+            height: 1000px;
+        }
+        .barra{
+            background-color: aquamarine;
+            width: 15%;
+            height: 100%;
+        }
+        .Perfil{
+            background-color: rgb(185, 184, 184);
+            width: 85%;
+            height:100%;
+        }
+        .titulo{
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            color: rgb(177, 22, 216);
+        }
+        .row{
+            padding: 2px;
+        }
+        h1, h2{
+            padding-left: 30px;
+        }
+        .superclase{
+            background-color: rgb(42, 182, 218);
+        }
+        .clasesita{
+            border: 2px solid black;
+            text-align: center;
+            
+        }
+        .clasesita:hover{
+            background-color: rgb(5, 88, 109);
+            cursor: pointer;
+        }
+        .borrar{
+            border: 2px solid black;
+            background-color: rgb(235, 3, 3);
+            cursor: pointer;
+            position: relative;
+            bottom: -800px;
+            text-align: center;
+            color: wheat;;
+        }
+        .borrar:hover{
+            background-color: rgb(94, 3, 3);
+        }
+        .campo{
+            padding-left: 35px;
+        }
+        .checkbox-JASoft {
+            display: inline-block;
+            position: relative;
+            width: 70px;
+            height: 30px;
+            background: #555;
+            border-radius: 15px;
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,0.6), 0px 1px 0px rgba(255,255,255,0.3);   
+        }
+        .checkbox-JASoft label {
+
+            /* aspecto */
+            display: block;
+            width: 34px;
+            height: 20px;
+            border-radius: 17px;
+            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35);
+            background: #fcfff4;
+            background: linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+            cursor: pointer;
+
+            /* Posicionamiento */
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 1;
+
+            /* Comportamiento */
+            transition: all .4s ease;
+
+            /* ocultar el posible texto que tenga */
+            overflow: hidden;
+            text-indent: 35px;  
+            transition: text-indent 0s;
+        }
+        .checkbox-JASoft input[type=checkbox]:checked + label {
+            left: auto;
+            right: 5px;
+        }
+        .checkbox-JASoft:after {
+            
+            content: 'SÍ';
+            font: 12px/30px Arial, sans-serif;
+            color: lime;
+            position: absolute;
+            left: 10px;
+            z-index: 0;
+            font-weight: bold;
+            
+        }
+
+        .checkbox-JASoft:before {
+            content: 'NO';
+            font: 12px/30px Arial, sans-serif;
+            color: #AAA;
+            position: absolute;
+            right: 10px;
+            z-index: 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 0px rgba(255,255,255,.20);
+        }
+        .checkbox-JASoft input[type=checkbox] {
+            visibility: hidden;
+            
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="modal fade" id="myModalInt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="inttitulo" class="modal-title">Error</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p id="intcampo">Debes llenar ambos campos.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id = "btnInt" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="borrarmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Borrar Cuenta</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ¿Estas seguro de querer borrar tu cuenta??<br>
+              Esta accion es irreversible. 
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btncerrar2" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" id="adios" class="btn btn-primary">Borrar Cuenta :(</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modaladios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">ADIOS</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ADIOS :(
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnx" class="btn btn-primary">ADIOS PERDEDOR</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalregresar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Actualizado</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Los datos se actualizaron con exito :)
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btny" class="btn btn-primary">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="titulo">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-md-10 col-lg-10 col1 mb-3">
+                    <img class="logo" src="imx/blanco.jpg" height="30" width="40"> 
+                    Capital Music
+                    <div class="row">
+                      <div class="col-8 col-sm-6">
+                        <div>
+                            <nav aria-label="breadcrumb" id="barra">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="../">Atras</a></li>
+                                    <li class="breadcrumb-item" aria-current="page"><a id="casa" href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Mi Cuenta</li> 
+                                </ol>
+                            </nav>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sup">
+        <div class="barra">
+            <h1>Perfil</h1>
+            <div class="superclase">
+                <div id="btnpref" class="clasesita">
+                    Preferencias
+                </div>
+                <div id="btnMyPlay" class="clasesita">
+                    Mis playlist
+                </div>
+                <div id="btnAbout" class="clasesita">
+                    Acerca de
+                </div> 
+                <div id="btnCerrar" class="clasesita">
+                    <a id="btncerrar" href='./index.html'> Cerrar Sesion </a>
+                </div>
+                
+            </div>
+            <div id="btnBorrar" class="borrar">
+                Borrar Cuenta
+            </div>
+        </div>
+        <div class="Perfil">
+            <h1>Mi Cuenta</h1>
+            <h2>Editar cuenta</h2>
+            <form action="">
+                <div class="formulario">
+                    <div class="campo">
+                        <label for="forNombre">Nombre:</label>
+                        <div>
+                            <input id="forNombre" name="forNombre" type="text" value="" >
+                            <div class="checkbox-JASoft">
+                                <input type="checkbox" id="checkAvanzado1" value="Valor"/>
+                                <label for="checkAvanzado1">TEXTO QUE NO DEBERÍA VERSE</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="forApellido">Apellido:</label>
+                        <div>
+                            <input id="forApellido" name="forApellido" type="text" value="">
+                            <div class="checkbox-JASoft">
+                                <input type="checkbox" id="checkAvanzado2" value="Valor"/>
+                                <label for="checkAvanzado2">TEXTO QUE NO DEBERÍA VERSE</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="forUsuario">Nombre de usuario:</label>
+                        <div>
+                            <input id="forUsuario" name="forUsuario" type="text" value="" checked="checked">
+                            <div class="checkbox-JASoft">
+                                <input type="checkbox" id="checkAvanzado3" value="Valor"/>
+                                <label for="checkAvanzado3">TEXTO QUE NO DEBERÍA VERSE</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="forCorreo">Correo Electronico:</label>
+                        <div>
+                            <input id="forCorreo" name="forCorreo" type="text" value="" checked>
+                            <div class="checkbox-JASoft">
+                                <input type="checkbox" id="checkAvanzado4" value="Valor"/>
+                                <label for="checkAvanzado4">TEXTO QUE NO DEBERÍA VERSE</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="forContra">Contraseña:</label>
+                        <div>
+                            <input id="forContra" name="forContra" type="text" value="" checked>
+                            <div class="checkbox-JASoft">
+                                <input type="checkbox" id="checkAvanzado5" value="Valor"/>
+                                <label for="checkAvanzado5">TEXTO QUE NO DEBERÍA VERSE</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input id="update" type="button" value="Actualizar">
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <script src="cuenta.js">
+
+    </script>
+</body>
+</html>
